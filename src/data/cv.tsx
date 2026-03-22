@@ -227,17 +227,17 @@ export const cvData: Record<string, React.ReactNode> = {
     return (
       <div className="w-full overflow-hidden py-4 text-[#bac2de]">
         <div className="relative w-full">
-          <div className="flex w-max gap-16 hover:[animation-play-state:paused] py-8 animate-marquee">
-            {[...CERTS_DATA, ...CERTS_DATA, ...CERTS_DATA, ...CERTS_DATA, ...CERTS_DATA, ...CERTS_DATA].map((cert, index) => (
-              <div key={index} className="w-[280px] md:w-[320px] flex-shrink-0 flex flex-col gap-6 justify-center">
+          <div className="flex w-max gap-12 py-8 animate-marquee">
+            {[...CERTS_DATA, ...CERTS_DATA, ...CERTS_DATA].map((cert, index) => (
+              <div key={index} className="w-[300px] md:w-[380px] flex-shrink-0 flex flex-col gap-4">
                 <CertificateImage 
                    src={cert.src} 
                    alt={cert.title} 
-                   className="w-full h-[180px] md:h-[220px] rounded-none !border-none !shadow-[0_15px_40px_rgba(0,0,0,0.8)] ring-0 outline-none hover:scale-110 transition-all duration-700 bg-white" 
+                   className="w-full h-[200px] md:h-[260px] !rounded-xl !border-surface1 !shadow-2xl" 
                 />
-                <div className="flex flex-col text-center px-4 mt-2">
-                  <h3 className="text-lg font-bold text-[#bac2de] leading-tight line-clamp-2 uppercase tracking-wide drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]" title={cert.title}>{cert.title}</h3>
-                  <p className="text-[12px] text-[#bac2de]/60 mt-3 tracking-[0.2em] font-medium">{cert.org}</p>
+                <div className="flex flex-col text-center px-4">
+                  <h3 className="text-base md:text-lg font-bold text-lavender uppercase tracking-wide leading-tight" title={cert.title}>{cert.title}</h3>
+                  <p className="text-[12px] text-subtext0 mt-2 tracking-widest font-medium">{cert.org}</p>
                 </div>
               </div>
             ))}
