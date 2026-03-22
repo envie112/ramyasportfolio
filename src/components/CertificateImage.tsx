@@ -16,11 +16,13 @@ export function CertificateImage({ src, alt, className }: { src: string; alt: st
   return (
     <>
       <div 
-        className={`relative overflow-hidden shadow-md hover:scale-105 transition-all duration-300 cursor-pointer group flex-shrink-0 ${className || "w-full md:w-64 h-48 rounded-lg border border-[#585b70]"}`}
+        className={`relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300 cursor-pointer group flex-shrink-0 bg-white ${className || "w-full md:w-64 h-48 rounded-lg border border-[#585b70]"}`}
         onClick={() => setIsOpen(true)}
       >
-        <Image src={src} alt={alt} fill className="object-cover" />
-        <div className="absolute inset-0 bg-[#1e1e2e]/0 group-hover:bg-[#1e1e2e]/40 transition-[background-color] duration-300 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 p-2 flex items-center justify-center">
+          <Image src={src} alt={alt} fill className="object-contain p-2" />
+        </div>
+        <div className="absolute inset-0 bg-[#1e1e2e]/0 group-hover:bg-[#1e1e2e]/20 transition-[background-color] duration-300 flex items-center justify-center pointer-events-none">
           <span className="bg-[#11111b]/80 text-[#cdd6f4] px-4 py-2 rounded-full text-sm backdrop-blur-md border border-[#45475a] shadow-lg flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-95 group-hover:scale-100">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
